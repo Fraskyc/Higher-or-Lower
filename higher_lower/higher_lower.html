@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower Game</title>
+    <link rel="stylesheet" href="higher_lower.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Higher or Lower Game</h1>
+        <button onclick="location.href='../index.html'">Back</button>
+
+        <div class="score">Score: <span id="score">0</span></div>
+        <div id="game" class="grid">
+            <div id="item1" class="item">
+                <h2 id="item1-name"></h2>
+                <p id="item1-searches"></p>
+            </div>
+            <div id="item2" class="item">
+                <h2 id="item2-name"></h2>
+                <p>???</p>
+                <div class="buttons">
+                    <button onclick="guessHigher()">Higher</button>
+                    <button onclick="guessLower()">Lower</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="higher_lower.js"></script>
+</body>
+</html>

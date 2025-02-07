@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Searches</title>
+    <link rel="stylesheet" href="guess_the_searches.css">
+</head>
+<body>
+    <h1>Guess the Searches</h1>
+    <button onclick="location.href='../index.html'">Back</button>
+    
+    <div class="container">
+        <div class="player-wins player1-wins">Player 1 Wins: <span id="player1Wins">0</span></div>
+        <div class="player-wins player2-wins">Player 2 Wins: <span id="player2Wins">0</span></div>
+        
+        <div class="game-area">
+            <div class="image-container">
+                <img id="itemImage" src="" alt="Item">
+            </div>
+            <h2 id="itemName"></h2>
+            <div class="inputs">
+                <input type="number" id="player1Guess" placeholder="Player 1">
+                <input type="number" id="player2Guess" placeholder="Player 2">
+            </div>
+            <div class="buttons">
+                <button onclick="submitGuesses()">Submit</button>
+            </div>
+        </div>
+        <div class="score-container">
+            <div class="score" id="player1Score">0</div>
+            <div class="score" id="player2Score">0</div>
+        </div>
+    </div>
+    
+    <script src="guess_the_searches.js"></script>
+</body>
+</html>
