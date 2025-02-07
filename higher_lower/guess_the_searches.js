@@ -67,8 +67,10 @@ function loadNewItem() {
 }
 
 function submitGuesses() {
-    const player1Guess = parseInt(document.getElementById('player1Guess').value) || 0;
-    const player2Guess = parseInt(document.getElementById('player2Guess').value) || 0;
+    const player1GuessInput = document.getElementById('player1Guess');
+    const player2GuessInput = document.getElementById('player2Guess');
+    const player1Guess = parseInt(player1GuessInput.value) || 0;
+    const player2Guess = parseInt(player2GuessInput.value) || 0;
     const actualSearches = currentItem.searches;
 
     const diff1 = Math.abs(player1Guess - actualSearches);
@@ -81,6 +83,10 @@ function submitGuesses() {
     }
 
     updateScores();
+
+    // Clear player inputs
+    player1GuessInput.value = "";
+    player2GuessInput.value = "";
 }
 
 function updateScores() {
@@ -99,7 +105,9 @@ function updateScores() {
 
     document.getElementById('player1Wins').textContent = player1Wins;
     document.getElementById('player2Wins').textContent = player2Wins;
+
     loadNewItem();
 }
 
+// Load the first item when the page starts
 loadNewItem();
