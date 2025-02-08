@@ -1,3 +1,4 @@
+//all the items
 const items = [
     { name: 'Coffe', category:"food" ,  displayed_searches:"113 450 000" , searches: 113450000, image: "Photos/Coffee.jpg" },
     { name: 'iPhone', category:"brands" ,displayed_searches:"388 239 000" , searches: 388239000, image: 'Photos/iPhone.jpg' },
@@ -54,6 +55,23 @@ const items = [
 
 ];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let player1Score = 0;
 let player2Score = 0;
 let player1Wins = 0;
@@ -64,8 +82,30 @@ function loadNewItem() {
     currentItem = items[Math.floor(Math.random() * items.length)];
     document.getElementById('itemImage').src = currentItem.image;
     document.getElementById('itemName').textContent = currentItem.name;
+    
+}
+//show number of searches on the last item with a kůl transition
+function showDarkenedImageEffect() {
+    // Darken the image
+    itemImage.classList.add('dark');
+
+    setTimeout(() => {
+    textOverlay.style.opacity = 1;
+
+    setTimeout(() => {
+        // Reset image and overlay
+        itemImage.classList.remove('dark');
+        textOverlay.style.opacity = 0;
+
+        loadNewItem();
+    }, 3000);
+    }, 500);
 }
 
+//show the number of searches for the last guessed item
+function ShowPreviousSearches() {
+    document.getElementById('textOverlay').textContent = currentItem.displayed_searches;
+}
 function submitGuesses() {
     const player1GuessInput = document.getElementById('player1Guess');
     const player2GuessInput = document.getElementById('player2Guess');
@@ -81,13 +121,20 @@ function submitGuesses() {
     } else if (diff2 < diff1) {
         player2Score++;
     }
+    
+    showDarkenedImageEffect();
 
     updateScores();
 
     // Clear player inputs
     player1GuessInput.value = "";
     player2GuessInput.value = "";
+
+    
+    
+    
 }
+
 
 function updateScores() {
     document.getElementById('player1Score').textContent = player1Score;
@@ -106,8 +153,10 @@ function updateScores() {
     document.getElementById('player1Wins').textContent = player1Wins;
     document.getElementById('player2Wins').textContent = player2Wins;
 
-    loadNewItem();
+    //show correct num of searches for last guess
+    ShowPreviousSearches();
+
 }
 
-// Load the first item when the page starts
-loadNewItem();
+//initial item to guess
+    loadNewItem();
