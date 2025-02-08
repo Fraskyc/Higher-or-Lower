@@ -62,6 +62,7 @@ function shuffleArray(array) {
     }
 }
 
+
 function initializeGame() {
     shuffleArray(items);
     currentIndex = 0;
