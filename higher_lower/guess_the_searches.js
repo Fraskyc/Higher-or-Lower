@@ -1,6 +1,6 @@
 //all the items
 const items = [
-    { name: 'Coffe', category:"food" ,  displayed_searches:"113 450 000" , searches: 113450000, image: "Photos/Coffee.jpg" },
+    { name: 'Coffee', category:"food" ,  displayed_searches:"113 450 000" , searches: 113450000, image: "Photos/Coffee.jpg" },
     { name: 'iPhone', category:"brands" ,displayed_searches:"388 239 000" , searches: 388239000, image: 'Photos/iPhone.jpg' },
     { name: 'Android', category:"brands" , displayed_searches:"104 000 000" , searches: 104000000, image: 'Photos/Android.jpg' },
     { name: 'Keychron', category:"brands", displayed_searches:"1 259 000", searches: 1259000, image: 'Photos/Keychron.jpg' },
