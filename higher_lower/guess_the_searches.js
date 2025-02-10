@@ -78,6 +78,14 @@ let player1Wins = 0;
 let player2Wins = 0;
 let currentItem;
 
+document.addEventListener('DOMContentLoaded', function () {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
+
+
 function loadNewItem() {
     currentItem = items[Math.floor(Math.random() * items.length)];
     document.getElementById('itemImage').src = currentItem.image;

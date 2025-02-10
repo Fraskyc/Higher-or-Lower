@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #a8a8a8;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    margin-top: 50px;
+}
+button {
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 18px;
+    background: #5a67d8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background: #4c51bf;
+}
+.custom-tooltip {
+    text-align: end;
+}

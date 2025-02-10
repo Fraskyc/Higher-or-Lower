@@ -57,6 +57,14 @@ const items = [
 let currentIndex = 0;
 let score = 0;
 
+document.addEventListener('DOMContentLoaded', function () {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
+
+
 //shuffle the list
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
